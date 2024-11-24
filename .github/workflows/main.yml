@@ -26,6 +26,6 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:latest .
-          docker tag ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:latest ${{ env.DOCKER_USERNAME }}/frontend-minikube:${{ github.sha }}
+          docker tag ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:latest ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:${{ github.sha }}
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/frontend-minikube:${{ github.sha }}

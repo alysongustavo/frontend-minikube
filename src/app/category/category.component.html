@@ -1,0 +1,13 @@
+<div class="container mt-4">
+  <h2>Categories</h2>
+  <div *ngIf="categories && categories.length > 0; else noData">
+    <ul class="list-group">
+      <li *ngFor="let category of categories" class="list-group-item">
+        {{ category.id }} - {{ category.name }}
+      </li>
+    </ul>
+  </div>
+  <ng-template #noData>
+    <p class="text-danger">No categories available.</p>
+  </ng-template>
+</div>
